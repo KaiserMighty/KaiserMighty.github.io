@@ -131,16 +131,16 @@ const Bootup = () => {
         );
         setCurrentLine(currentLine + 1);
         checkOverflow();
-      }, getRandomDuration(1, 50));
+      }, getRandomDuration(1, 100));
       return () => clearTimeout(timer);
     } else {
       setTimeout(() => {
         setVisibleMessages([]);
         setShowPrompt(true);
-        setTimeout(() => navigate('/'), 1500);
+        setTimeout(() => navigate('/lowlevel'), 1500);
       }, 1500);
     }
-  }, [currentLine, navigate]);
+  }, [showPrompt, currentLine, navigate]);
 
   return (
     <div
